@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Authentication</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="container">
+            <button class="login">Login</button>
+            <button class="signup">Signup</button>
+             <button class="Home">Home</button>
+            
+            
+            
+        </div>
+        
+        <script>
+            const login=document.querySelector('.login');
+            login.addEventListener('click',function(){
+              window.location.href='login.html';
+            });
+            
+            const signup=document.querySelector('.signup');
+            signup.addEventListener('click',function(){
+              window.location.href='signup.html';
+            });
+            const Home=document.querySelector('.Home');
+            Home.addEventListener('click',function(){
+               const token = localStorage.getItem('accessToken');
+               if(!token){
+                   alert('please Login first');
+                   window.location.href='login.html';
+               }else{
+                   window.location.href='home.html';
+               }
+            });
+        </script>
+    </body>
+</html>
